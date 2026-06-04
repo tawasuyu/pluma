@@ -1,0 +1,46 @@
+[package]
+name = "pluma-app"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+publish.workspace = true
+description = "pluma-app — editor de escritura multilienzo: panel de documentos del sled, cuerpo_ide central editable, panel LLM con cycler de backends y derivación de hijas."
+
+[[bin]]
+name = "pluma-app"
+path = "src/main.rs"
+
+[dependencies]
+pluma-core = { path = "../pluma-core" }
+pluma-cuerpo = { path = "../pluma-cuerpo" }
+pluma-md = { path = "../pluma-md" }
+foreign-docx = { path = "../foreign-docx" }
+pluma-align = { path = "../pluma-align" }
+pluma-editor-cuerpo = { path = "../pluma-editor-cuerpo" }
+pluma-editor-llimphi = { path = "../pluma-editor-llimphi" }
+pluma-store = { path = "../pluma-store" }
+pluma-transform = { path = "../pluma-transform" }
+pluma-transform-llm = { path = "../pluma-transform-llm" }
+pluma-llm = { path = "../pluma-llm" }
+pluma-llm-core = { path = "../pluma-llm-core" }
+pluma-llm-mock = { path = "../pluma-llm-mock" }
+llimphi-ui = { workspace = true }
+# Rail hospedado: pluma puede prestar sus secciones (Documentos/LLM/Buscar/Diff)
+# al rail de pata y colapsar sus columnas (PLUMA_DELEGATE_SIDEBAR).
+pata-host = { workspace = true }
+llimphi-theme = { workspace = true }
+llimphi-widget-button = { workspace = true }
+llimphi-widget-splitter = { workspace = true }
+llimphi-widget-list = { workspace = true }
+llimphi-widget-text-editor = { workspace = true }
+llimphi-widget-text-input = { workspace = true }
+llimphi-widget-menubar = { workspace = true }
+llimphi-widget-edit-menu = { workspace = true }
+llimphi-widget-context-menu = { workspace = true }
+llimphi-motion = { workspace = true }
+app-bus = { workspace = true }
+tokio = { workspace = true }
+uuid = { workspace = true }
+arboard = { workspace = true }

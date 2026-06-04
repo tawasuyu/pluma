@@ -1,0 +1,25 @@
+[package]
+name = "pluma-deck-recorrido-llimphi"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+publish.workspace = true
+description = "Frontend Llimphi del modo Recorrido de pluma-deck: lienzo infinito + cámara que vuela entre marcos (presentación tipo Prezi)."
+
+[dependencies]
+pluma-deck-core = { path = "../pluma-deck-core" }
+llimphi-ui = { workspace = true }
+# Decodifica los bytes de ContenidoMarco::Imagen (PNG/JPEG/WebP) → RGBA8 para
+# pintarlos como peniko::Image. El core guarda bytes crudos; aquí se rasterizan.
+image = { workspace = true }
+
+[dev-dependencies]
+# Sólo para el example recorrido_md_demo: muestra la cadena markdown →
+# cuerpo/átomos → Recorrido sin acoplar el lib al modelo de documento. La
+# feature `pluma` del core (sólo en dev) trae el adaptador reusable que el
+# demo dogfoodea en vez de su antiguo glue inline.
+pluma-md = { path = "../pluma-md" }
+pluma-core = { path = "../pluma-core" }
+pluma-deck-core = { path = "../pluma-deck-core", features = ["pluma", "serde"] }

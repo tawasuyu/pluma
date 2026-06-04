@@ -1,0 +1,16 @@
+[package]
+name = "pluma-semantic"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+publish.workspace = true
+description = "pluma-app — scoring de intensidad semántica: embebe los átomos vía verbo y mide su afinidad coseno a un conjunto de conceptos."
+
+[dependencies]
+pluma-core = { path = "../pluma-core" }
+rimay-verbo-core = { workspace = true }
+
+[dev-dependencies]
+rimay-verbo-mock = { workspace = true }
+tokio = { workspace = true }

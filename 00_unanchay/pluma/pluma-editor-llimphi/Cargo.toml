@@ -1,0 +1,37 @@
+[package]
+name = "pluma-editor-llimphi"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+publish.workspace = true
+description = "pluma — backend Llimphi del editor DAG: pinta un RenderPlan como bloques de átomo, conectores de dependencia y osciloscopio de coherencia."
+
+[dependencies]
+pluma-render-plan = { path = "../pluma-render-plan" }
+pluma-core = { path = "../pluma-core" }
+pluma-cuerpo = { path = "../pluma-cuerpo" }
+pluma-align = { path = "../pluma-align" }
+pluma-editor-cuerpo = { path = "../pluma-editor-cuerpo" }
+llimphi-ui = { workspace = true }
+llimphi-theme = { workspace = true }
+llimphi-widget-text-editor = { workspace = true }
+rimay-localize = { workspace = true }
+uuid = { workspace = true, features = ["serde"] }
+
+[dev-dependencies]
+pluma-graph = { path = "../pluma-graph" }
+pluma-graph-transform = { path = "../pluma-graph-transform" }
+pluma-transform = { path = "../pluma-transform" }
+pluma-transform-tabla = { path = "../pluma-transform-tabla" }
+pluma-transform-llm = { path = "../pluma-transform-llm" }
+pluma-align-embeddings = { path = "../pluma-align-embeddings" }
+pluma-llm = { path = "../pluma-llm" }
+pluma-llm-core = { path = "../pluma-llm-core" }
+pluma-llm-mock = { path = "../pluma-llm-mock" }
+pluma-store = { path = "../pluma-store" }
+llimphi-widget-button = { workspace = true }
+rimay-verbo-core = { workspace = true }
+rimay-verbo-mock = { workspace = true }
+rimay-verbo-daemon = { workspace = true }
+tokio = { workspace = true }

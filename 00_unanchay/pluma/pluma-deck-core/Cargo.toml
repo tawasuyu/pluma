@@ -1,0 +1,25 @@
+[package]
+name = "pluma-deck-core"
+description = "Vista — máquina de estados agnóstica para deck horizontal con snap. Sin dependencias web/DOM."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+publish.workspace = true
+
+[features]
+# Adaptador opcional pluma → Recorrido. El core sigue agnóstico por defecto
+# (cero dependencias); activar `pluma` trae el puente desde el modelo de
+# documento de pluma (NarrativeAtom / Cuerpo) hacia los slides del Recorrido.
+pluma = ["dep:pluma-core", "dep:pluma-cuerpo", "dep:uuid"]
+# Persistencia del Recorrido en el codec nativo del workspace (postcard, el
+# mismo de format/akasha/pluma-cuerpo). Deriva serde sobre el modelo de datos
+# (Rect/Camara/Marco/ContenidoMarco/Recorrido) + helpers serializar/deserializar.
+serde = ["dep:serde", "dep:postcard"]
+
+[dependencies]
+pluma-core = { path = "../pluma-core", optional = true }
+pluma-cuerpo = { path = "../pluma-cuerpo", optional = true }
+uuid = { workspace = true, optional = true }
+serde = { workspace = true, optional = true, features = ["derive"] }
+postcard = { workspace = true, optional = true }

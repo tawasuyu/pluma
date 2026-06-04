@@ -1,0 +1,23 @@
+[package]
+name = "pluma-store"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+publish.workspace = true
+description = "pluma — persistencia del grafo narrativo + cuerpos + transformaciones + cartas de hebras en un store key-value embebido (sled), serializado con bincode."
+
+[dependencies]
+pluma-core = { path = "../pluma-core" }
+pluma-graph = { path = "../pluma-graph" }
+pluma-cuerpo = { path = "../pluma-cuerpo" }
+pluma-align = { path = "../pluma-align" }
+pluma-transform = { path = "../pluma-transform" }
+sled = { workspace = true }
+bincode = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+uuid = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }
